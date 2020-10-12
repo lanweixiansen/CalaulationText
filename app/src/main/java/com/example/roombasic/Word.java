@@ -1,5 +1,6 @@
 //一个数据库表的实体类
 package com.example.roombasic;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -9,6 +10,15 @@ public class Word {//创建数据库的实体类，表名Word，主键id,字段�
     private int id;
     private String word;
     private String ChineseMeaning;
+    private boolean chineseInvisible;
+
+    public boolean isChineseInvisible() {
+        return chineseInvisible;
+    }
+
+    public void setChineseInvisible(boolean chineseInvisible) {
+        this.chineseInvisible = chineseInvisible;
+    }
 
     public Word(String word, String chineseMeaning) {
         this.word = word;
