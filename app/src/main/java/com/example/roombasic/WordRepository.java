@@ -32,7 +32,9 @@ public class WordRepository {
     public LiveData<List<Word>> getAllWordsLive() {
         return allWordsLive;
     }
-
+    LiveData<List<Word>> findWordsWithPattern(String pattern){
+        return wordDao.findWordsWithPattern("%" + pattern + "%");
+    }
     static class InsertAsyncTask extends AsyncTask<Word,Void,Void> {
         private WordDao wordDao;
 

@@ -27,5 +27,6 @@ public interface WordDao {//创建一个管理数据库中的数据的接口
     @Query("SELECT * FROM WORD ORDER BY ID DESC")
         //List<Word> getAllWords();
     LiveData<List<Word>> getAllWordsLive();//获取数据库中的数据
-
+    @Query("SELECT * FROM WORD WHERE word LIKE :pattern ORDER BY ID DESC")
+    LiveData<List<Word>>findWordsWithPattern(String pattern);
 }
